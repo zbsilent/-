@@ -1,0 +1,54 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript" src='/Users/zbsilent/bower_components/react/react.development.js'></script>
+	<script type="text/javascript" src='/Users/zbsilent/bower_components/react/react-dom.development.js'></script>
+	<script type="text/javascript" src='/Users/zbsilent/bower_components/babel/browser.js'></script>
+<style>
+	.myDiv{width:200px;height:200px;border:1px solid black;}
+	input.active{background:red}
+</style>
+</head>
+<body>
+
+  <div id='app'></div>
+	<script>
+		function fnn(json){
+			console.log(json.g);
+			json.g.forEach((item, i) => {
+				var oLi = document.createElement('li')
+				oLi.innerHTML = item;
+				ul.appendChild(oLi);
+			});
+
+
+		}
+	</script>
+  <script type="text/babel">
+	class Search extends React.Component{
+		change(e){
+			let oS = document.createElement('script');
+			oS.src='https://www.baidu.com/sugrec?ie=utf-8&json=1&prod=pc&wd='+e.target.value+'&cb=fnn'
+			document.head.appendChild(oS);
+			oS.remove();
+		}
+		render(){
+			console.log('组件'+ this,this);
+
+			return (
+				<div>
+					<input type='text' onChange={this.change.bind(this)}/>
+					<ul id='ul'>
+
+					</ul>
+				</div>
+			)
+		}
+	}
+
+
+	ReactDOM.render(<Search/>,app);
+
+	</script>
+<body>
+</html>

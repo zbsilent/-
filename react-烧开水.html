@@ -1,0 +1,54 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript" src='/Users/zbsilent/bower_components/react/react.development.js'></script>
+	<script type="text/javascript" src='/Users/zbsilent/bower_components/react/react-dom.development.js'></script>
+	<script type="text/javascript" src='/Users/zbsilent/bower_components/babel/browser.js'></script>
+<body>
+
+  <div id='app'></div>
+  <script type="text/babel">
+	{/*组件 Water min0 max=0 高于max开 低于min0结冰*/}
+	function show(v,min,max){
+		console.log(v,min,max);
+		if(Number(v)<Number(min){
+			return <div>水结冰了</div>
+		}
+		else if(Number(v)>Number(max)){
+			return <div>水烧开了</div>
+		}
+		else{
+			return <div>加热</div>
+		}
+
+	}
+
+	class Water extends React.Component{
+		constructor(){
+			super();
+			this.state={
+				wd : 20
+			}
+		}
+
+		change(e){
+			this.setState({
+				wd:e.target.value
+			})
+		}
+
+		render(){
+
+			return(
+				<div>
+					<input type='number' onChange={this.change.bind(this)} defaultValue={this.state.wd}/>
+					{/*这里直接通过this.props获取组件参数*/}
+					{show(this.state.wd,this.props.min,this.props.max)}
+				</div>
+			)
+		}
+	}
+	ReactDOM.render(<Water min ='0' max='10'/>,app)
+	</script>
+<body>
+</html>

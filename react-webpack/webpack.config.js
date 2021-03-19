@@ -1,8 +1,14 @@
 module.exports = {
   mode: 'development',
-  entry:'./index.js',
+  entry:'./app/index.js',
   output:{
     filename:'bundle.js'
+  },
+  devServer:{
+    inline:true,
+    contentBase:'./app',
+    port:9080,
+    open:true
   },
   module:{
     rules:[{

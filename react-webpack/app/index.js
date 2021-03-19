@@ -16,7 +16,6 @@ let jsonValue = {
 class Reo extends React.Component {
 
 
-
   constructor() {
     super()
     this.state = {

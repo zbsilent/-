@@ -12,6 +12,7 @@ let jsonValue = {
   bottomValue: ['tab1的value', 'tab2的value', 'tab3的value']
 }
 
+
 class Reo extends React.Component {
 
 

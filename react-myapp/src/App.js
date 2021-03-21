@@ -23,7 +23,7 @@ function App() {
       <Tab tabJson ={{
         picUrl:['./imag/1.jpeg','./imag/2.jpeg','./imag/3.jpeg','./imag/4.jpeg'],
         timer:2000
-      }}/>
+       }}/>
     </div>
 
   );

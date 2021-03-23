@@ -5,11 +5,32 @@
   </head>
   <body>
     <script type="text/javascript">
-      function show() {
-        console.log(1);
+      // function show() {
+      //   console.log(1);
+      // }
+      // var x = show;
+      // new x();
+      // //  console.log(x);
+      // // console.log(x.prototype);
+      // show.prototype.a = function () {
+      //   alert(1);
+      // };
+      // var c = new show();
+      // c.a
+      class a {
+        constructor() {
+          this.x = 10;
+          console.log(this.x);
+        }
+        ffff() {
+          alert("原型->其实就是方法");
+        }
       }
-      var x = show;
-      new x();
+      let t = new a();
+      console.log(t);
+
+      console.log(a.prototype,t.x);
+       console.log(t.x);
     </script>
   </body>
 </html>

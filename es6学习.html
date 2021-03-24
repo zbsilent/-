@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <style type="text/css">
+      .outNode>div{width: 200px;height: 200px;background: #ccc;display: none;}
+      .outNode>div:first-of-type{
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      // function show() {
+      //   console.log(1);
+      // }
+      // var x = show;
+      // new x();
+      // //  console.log(x);
+      // // console.log(x.prototype);
+      // show.prototype.a = function () {
+      //   alert(1);
+      // };
+      // var c = new show();
+      // c.a
+
+      // class a {
+      //   constructor() {
+      //     this.x = 10;
+      //     console.log(this.x);
+      //   }
+      //   ffff() {
+      //     alert("原型->其实就是方法");
+      //   }
+      // }
+      // let t = new a();
+      // console.log(t);
+      // console.log(a.prototype,t.x);
+      // console.log(t.x);
+      // function show( ) {
+      //   // body...
+      //   return `abcdsd`;
+      // }
+      // var string = `showderreturnnis ${show()}` ;
+      // console.log(string);
+
+      var jsonData = {
+        topValue: ["zbsilent", "vartestt", "wagsdsd"],
+        bottomInnner: ["aaaa", "bbbb", "vvvvv"],
+      };
+      createNode = (json) => `<div class='outNode'>
+      ${json.topValue.map((v) => `<input type='button' value=${v}></input>`).join('')}
+      ${json.bottomInnner.map((v)=>`<div>${v}</div>`).join('')}
+      </div>`;
+      document.body.innerHTML = createNode(jsonData);
+      console.log(createNode(jsonData));
+    </script>
+  </body>
+</html>

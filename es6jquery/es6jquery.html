@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 100px;
+				height: 100px;
+				float: left;
+				margin: 20px;
+				background: black;
+			}
+			.mmm {
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1"></div>
+
+		<div class="div1"></div>
+		<div class="div1"></div>
+		<script type="text/javascript">
+			class jquery {
+				constructor(props = "") {
+					this.props = props;
+					this.allNode = [];
+					switch (this.props.charAt(0)) {
+						case "#":
+							this.allNode.push(
+								document.getElementById(this.props.substring(1))
+							);
+							//console.log(this.allNode);
+
+							break;
+						case ".":
+							this.myObj = document.getElementsByClassName(
+								this.props.substring(1)
+							);
+							for (let i = 0; i < this.myObj.length; i++) {
+								this.allNode.push(this.myObj[i]);
+							}
+							console.log(this.allNode);
+							break;
+					}
+				}
+				addClass(classes) {
+					for (var i = 0; i < this.allNode.length; i++) {
+						this.allNode[i].classList.add(classes);
+					}
+				}
+				removeClass() {
+					for (var i = 0; i < this.allNode.length; i++) {
+						this.allNode[i].classList.remove(classes);
+					}
+				}
+				css(json) {
+					for (let i = 0; i < this.allNode.length; i++) {
+						for (var j in json) {
+							this.allNode[i]["style"][j] = json[j];
+						}
+					}
+				}
+			}
+
+			function $(obj) {
+				return new jquery(obj);
+			}
+			//$(".div1").addClass("mmm");
+			div1.onclick = () => {
+				//$(".div1").addClass("mmm");
+				$(".div1").css({
+					width: "200px",
+					height: "100px",
+					transition: "1s",
+					background: "green",
+				});
+			};
+		</script>
+	</body>
+</html>
